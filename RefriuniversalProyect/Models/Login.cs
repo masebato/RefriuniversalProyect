@@ -42,7 +42,7 @@ namespace RefriuniversalProyect.Models
 
         public DataTable ConsultarMenu(string rol)
         {
-            return con.ConsultarDatos("SELECT menu.idMENU, menu.nombreMENU, menu.rutaMENU FROM menu INNER JOIN rol ON menu.ROL_idROL = rol.idROL WHERE rol.nombreROL = '"+rol+"'");
+            return con.ConsultarDatos("SELECT menu.idMENU, menu.nombreMENU, menu.rutaMENU FROM menu INNER JOIN permiso ON permiso.MENU_idMENU = menu.idMENU INNER JOIN rol ON permiso.ROL_idROL = rol.idROL WHERE rol.nombreROL = '"+rol+"'");
         }
     }
 }

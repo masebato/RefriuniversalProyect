@@ -9,7 +9,7 @@
             <div class="col-md-12 ">
                 <div class="card card-user">
                     <div class="card-header">
-                        <h5>ASIGNAR PERSMISOS</h5>
+                        <h5>ASIGNAR PERMISOS</h5>
                     </div>
                     <div class="card-body">
                         <div class="row">

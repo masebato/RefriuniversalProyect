@@ -48,7 +48,7 @@
                             <img src="assets/img/logoru.png">
                         </div>
                     </a>
-                    <a href="Inicio.aspx" class="simple-text logo-normal">REFRIUNIVERSAL
+                    <a href="Inicio.aspx" class="simple-text logo-normal" >REFRIUNIVERSAL
                     </a>
                     <asp:Label Text="" ID="nombreSesion" runat="server" />
                 </div>

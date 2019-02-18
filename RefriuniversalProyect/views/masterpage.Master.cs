@@ -12,18 +12,18 @@ namespace RefriuniversalProyect.views
 {
     public partial class masterpage : System.Web.UI.MasterPage
     {
-        private DataTable menu;
+        private DataTable menu = new DataTable();
         private Models.Login login = new Models.Login();
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
-               // CreateMenu();
-              //  nombreSesion.Text = Session["Nombre"].ToString();
+                CreateMenu();
+                nombreSesion.Text = Session["Nombre"].ToString();
             }
             catch (Exception)
             {
-              //  Response.Redirect("Login.aspx");
+                Response.Redirect("Login.aspx");
 
             }
         }
