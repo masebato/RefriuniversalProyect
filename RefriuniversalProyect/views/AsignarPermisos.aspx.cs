@@ -17,6 +17,7 @@ namespace RefriuniversalProyect.views.Parametricas
         DataTable Table_permisos = new DataTable();
         Rol obj_rol = new Rol();
         Permisos obj_permisos = new Permisos();
+        Permisos obj_permisos2;
         Models.Menu obj_menu = new Models.Menu();
         
 
@@ -24,8 +25,9 @@ namespace RefriuniversalProyect.views.Parametricas
         {
             try
             {
+              
                 if (!IsPostBack)
-                {                    
+                {
                     consultarRolesListView();
                 }              
             }
@@ -68,6 +70,8 @@ namespace RefriuniversalProyect.views.Parametricas
                 {
                     listaPermisos.DataSource = null;
                     listaPermisos.DataBind();
+                    permisosno.DataSource = diferencias;
+                    permisosno.DataBind();
                 }
                 else
                 {
@@ -148,8 +152,72 @@ namespace RefriuniversalProyect.views.Parametricas
 
         }
 
-        protected void permisosno_ItemDeleting(object sender, ListViewDeleteEventArgs e)
+       
+
+        protected void permisosno_ItemEditing(object sender, ListViewEditEventArgs e)
         {
+            try
+            {
+                permisosno.EditIndex = e.NewEditIndex;
+                Label menu = (Label)permisosno.Items[e.NewEditIndex].FindControl("idMENUlist");
+               
+                obj_permisos = new Permisos(
+                    dropdownRoles.SelectedValue,
+                    menu.Text
+                    );
+
+                if (obj_permisos.InsertarPermiso(obj_permisos))
+                {
+                   
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('REGISTRO ALMACENADO', '', 'success');", true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('ERROR AL ALMACENAR', '', 'error');", true);
+                }
+                string currentPage = this.Page.Request.AppRelativeCurrentExecutionFilePath;
+                Response.Redirect(currentPage);
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('OCURRIO UNA EXCEPTION', '', 'error');", true);
+            }
+          
+
+
+
+        }
+
+        protected void listaPermisos_ItemEditing(object sender, ListViewEditEventArgs e)
+        {
+            try
+            {
+                listaPermisos.EditIndex = e.NewEditIndex;
+                Label menu = (Label)listaPermisos.Items[e.NewEditIndex].FindControl("idMENUlist");
+                obj_permisos2 = new Permisos(
+                 
+                    dropdownRoles.SelectedValue,
+                       menu.Text
+
+                    );
+                if (obj_permisos2.ActualizarPermiso(obj_permisos2))
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('REGISTRO ALMACENADO', '', 'success');", true);
+                  
+                    
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('ERROR AL ALMACENAR', '', 'error');", true);
+                }
+                string currentPage = this.Page.Request.AppRelativeCurrentExecutionFilePath;
+                Response.Redirect(currentPage);
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('OCURRIO UNA EXCEPTION', '', 'error');", true);
+            }
+
 
         }
     }

@@ -27,23 +27,20 @@
                                 <table class="table table-responsive-lg">
                                     <thead>
                                         <tr>
-                                            <th>NOMBRE MENU</th>
-                                            <th>AGREGAR</th>
+                                            <th>NOMBRE MENU</th>                                           
                                             <td>ELIMINAR</td>
                                         </tr>
                                     </thead>
                                     <tbody class="text-left">
-                                        <asp:ListView ID="listaPermisos" runat="server" DataKeyNames="id">
+                                        <asp:ListView ID="listaPermisos" runat="server" DataKeyNames="id" OnItemEditing="listaPermisos_ItemEditing">
                                             <ItemTemplate>
                                                 <tr>
                                                     <td>
                                                         <asp:Label Text='<%#Eval("nombre") %>' runat="server" ID="NombreMENUList" />
                                                     </td>
+                                                  
                                                     <td>
-                                                        <asp:LinkButton CssClass="icono-pluscircle" Style="color: cornflowerblue" CommandArgument="add" runat="server" />
-                                                    </td>
-                                                    <td>
-                                                        <asp:LinkButton CssClass="icono-crossCircle" Style="color: cornflowerblue" CommandArgument="delete" runat="server" />
+                                                        <asp:LinkButton CssClass="icono-crossCircle" Style="color: cornflowerblue"  CommandName="edit"  runat="server" />
                                                     </td>
                                                     <td>
                                                         <asp:Label Text='<%#Eval("id") %>' runat="server" ID="idMENUlist" Visible="false" />
@@ -61,22 +58,20 @@
                                         <tr>
                                             <th>NOMBRE MENU</th>
                                             <th>AGREGAR</th>
-                                            <td>ELIMINAR</td>
+                                            
                                         </tr>
                                     </thead>
                                     <tbody class="text-left">
-                                        <asp:ListView ID="permisosno" runat="server" DataKeyNames="menuid" OnItemDeleting="permisosno_ItemDeleting" >
+                                        <asp:ListView ID="permisosno" runat="server" DataKeyNames="menuid" OnItemEditing="permisosno_ItemEditing" >
                                             <ItemTemplate>
                                                 <tr>
                                                     <td>
                                                         <asp:Label Text='<%#Eval("menunombre") %>' runat="server" ID="NombreMENUList" />
                                                     </td>
                                                     <td>
-                                                        <asp:LinkButton CssClass="icono-pluscircle" Style="color: cornflowerblue" CommandArgument="add" runat="server" />
+                                                        <asp:LinkButton CssClass="icono-pluscircle" Style="color: cornflowerblue" CommandName="edit" runat="server" />
                                                     </td>
-                                                    <td>
-                                                        <asp:LinkButton CssClass="icono-crossCircle" Style="color: cornflowerblue" CommandArgument="delete" runat="server" />
-                                                    </td>
+                                                   
                                                     <td>
                                                         <asp:Label Text='<%#Eval("menuid") %>' runat="server" ID="idMENUlist" Visible="false" />
                                                     </td>

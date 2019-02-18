@@ -100,7 +100,7 @@ namespace RefriuniversalProyect.views
                 }
 
             }
-            catch (Exception D)
+            catch (Exception )
             {
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('ERROR DE CONEXION', '', 'error');", true);
