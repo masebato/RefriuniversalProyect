@@ -129,6 +129,7 @@
     <Compile Include="Models\Reportes.cs" />
     <Compile Include="Models\Rol.cs" />
     <Compile Include="Models\Tecnico.cs" />
+    <Compile Include="Models\TipoDocumento.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="views\CrearCliente.aspx.cs">
       <DependentUpon>CrearCliente.aspx</DependentUpon>

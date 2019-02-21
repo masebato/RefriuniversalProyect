@@ -11,10 +11,14 @@ namespace RefriuniversalProyect.views
     public partial class CrearCliente : System.Web.UI.Page
     {
         Clientes clientes_obj;
+        TipoDocumento Documento_obj;
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            if (!IsPostBack)
+            {
+                cargarDocumentos();
+            }
         }
 
         protected void GuardarCliente(object sender, EventArgs e)
@@ -27,9 +31,9 @@ namespace RefriuniversalProyect.views
                     documento.Text,
                     direccion.Text,
                     correo.Text,
-                    "1"                    
+                    Telefono.Text,
+                    dropdowntipo.SelectedIndex.ToString()
                 );
-
 
                 if (clientes_obj.CrearCliente(clientes_obj))
                 {
@@ -39,16 +43,30 @@ namespace RefriuniversalProyect.views
                     documento.Text = "";
                     direccion.Text = "";
                     correo.Text = "";
+                    Telefono.Text = "";
+                    dropdowntipo.SelectedValue = "0";
                 }  
-
-
             }
             catch (Exception)
             {
-
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('ERROR AL ALMACENAR', '', 'error');", true);
             }
+        }
 
+        public void cargarDocumentos()
+        {
+            try
+            {
+                Documento_obj = new TipoDocumento();
+                dropdowntipo.DataSource = Documento_obj.consultartipoDdocu();
+                dropdowntipo.DataTextField = "nombreTIPODOCUMENTO";
+                dropdowntipo.DataValueField = "idTIPODOCUMENTO";
+                dropdowntipo.DataBind();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
         }
     }
 }

@@ -14,57 +14,63 @@
                         <br />
                         <div class="card-body">
                             <div class="row">
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>NOMBRE</label>
                                         <asp:TextBox runat="server" required CssClass="form-control" id="nombre"/>
                                     </div>
                                 </div>
-                                <div class="col-md-4">
+                                <div class="col-md-6">
                                     <div class="form-group">
                                         <label>APELLIDO</label>
                                         <asp:TextBox runat="server" required CssClass="form-control" id="apellido" />
                                     </div>
-                                </div>  
-                                <div class="col-md-4">
-                                    <div class="form-group">
-                                         <label>CORREO</label>
-                                         <asp:TextBox runat="server" required CssClass="form-control" type="email" ID="correo"/>                                       
-                                    </div>
-                                </div>        
+                                </div>
                             </div>
                             <div class="row">
-                                  <div class="col-md-4">
+                                <div class="col-md-4">
+                                    <div class="form-group">
+                                        <label>CORREO</label>
+                                        <asp:TextBox runat="server" required CssClass="form-control" type="email" ID="correo" />
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
                                     <div class="form-group">
                                         <label>TIPO DOCUMENTO</label>
-                                        <asp:DropDownList runat="server" CssClass="form-control" required>
-                                            <asp:ListItem Text="SELECCIONE" Selected />
-                                            <asp:ListItem Text="CEDULA" />
-                                            <asp:ListItem Text="TARJETA IDENTIDAD" />
+                                        <asp:DropDownList runat="server" CssClass="form-control" required ID="dropdowntipo" AppendDataBoundItems="true">
+                                            <asp:ListItem Text="SELECCIONE" Selected="True" Value="0" />
                                         </asp:DropDownList>
                                     </div>
                                 </div>
                                 <div class="col-md-4">
                                     <div class="form-group">
                                         <label>DOCUMENTO</label>
-                                        <asp:TextBox runat="server" required CssClass="form-control" ID="documento"/>                                                                              
+                                        <asp:TextBox runat="server" required CssClass="form-control" ID="documento" pattern="[0-9]*"/>
                                     </div>
-                                </div>      
+                                </div>
+                            </div>
+                            <div class="row">
                                 <div class="col-md-4">
                                     <div class="form-group">
-                                        <label>DIRECCION</label>
-                                        <asp:TextBox runat="server" required CssClass="form-control" ID="direccion"/>                                                                              
+                                        <label>TELEFONO</label>
+                                        <asp:TextBox runat="server" required CssClass="form-control" ID="Telefono" type="tel"   pattern="[0-9]*"/>
                                     </div>
-                                </div>         
-                            </div>
-                            </div>                                                                                           
-                            <div class="text-center">
-                                <asp:Button Text="Guardar" CssClass="btn btn-info btn-fill btn-wd" runat="server" OnClick="GuardarCliente" />
+                                </div>
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label>DIRECCION</label>
+                                        <asp:TextBox runat="server" required CssClass="form-control" ID="direccion" />
+                                    </div>
+                                </div>
                             </div>
                         </div>
+                        <div class="text-center">
+                            <asp:Button Text="Guardar" CssClass="btn btn-info btn-fill btn-wd" runat="server" OnClick="GuardarCliente" />
+                        </div>
                     </div>
-
                 </div>
+
+            </div>
             </div>
         </div>
   

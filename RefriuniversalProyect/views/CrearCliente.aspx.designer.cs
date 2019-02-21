@@ -40,6 +40,15 @@ namespace RefriuniversalProyect.views {
         protected global::System.Web.UI.WebControls.TextBox correo;
         
         /// <summary>
+        /// Control dropdowntipo.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList dropdowntipo;
+        
+        /// <summary>
         /// Control documento.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace RefriuniversalProyect.views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox documento;
+        
+        /// <summary>
+        /// Control Telefono.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox Telefono;
         
         /// <summary>
         /// Control direccion.
