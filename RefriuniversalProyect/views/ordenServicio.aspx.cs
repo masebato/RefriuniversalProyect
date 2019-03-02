@@ -5,7 +5,7 @@ using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using RefriuniversalProyect.Models;
-using RefriuniversalProyect.Conexion;
+using System.Data;
 
 namespace RefriuniversalProyect.views
 {
@@ -18,7 +18,39 @@ namespace RefriuniversalProyect.views
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            
+            if (!IsPostBack)
+            {
+                generarCodigo();
+            }
+        }
 
+
+        public void generarCodigo()
+        {
+
+            try
+            {
+                string codigo;
+                DataTable id = new DataTable();
+                orden = new OrdenServicio();
+                id = orden.MaxId();
+                if (id.Rows[0]["orden"].ToString()==null)
+                {
+                    codigo = "ORD-1";
+                }
+                else
+                {
+                    codigo = "ORD-" + id.Rows[0]["orden"].ToString();
+                }
+                codigoformulario.Text = codigo;
+
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
         }
 
         protected void GuardarRegistro(object sender, EventArgs e)

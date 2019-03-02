@@ -44,7 +44,7 @@ namespace RefriuniversalProyect.Models
 
         public bool InsertarTecnico(Tecnico tec)
         {
-            return con.OperarDatos("insert into tecnico (nombTECNICO, apelTECNICO,TIPODOCUMENTO_idTIPODOCUMENTO,documentoTECNICO,telefonoTECNICO ) values ('" + tec.nombTECNICO + "','" + tec.apelTECNICO + "','" + tec.tipodocuTECNICO + "','" + tec.documentoTECNICO + "','" + tec.telefonoTECNICO + "'  ");
+            return con.OperarDatos("insert into tecnico (nombTECNICO, apelTECNICO,TIPODOCUMENTO_idTIPODOCUMENTO,documentoTECNICO,telefonoTECNICO ) values ('" + tec.nombTECNICO + "','" + tec.apelTECNICO + "','" + tec.tipodocuTECNICO + "','" + tec.documentoTECNICO + "','" + tec.telefonoTECNICO + "' ) ");
 
         }
     }

@@ -18,7 +18,7 @@
                                 <div class="col-md-3">
                                     <div class="form-group">
                                         <label>CODIGO</label>
-                                        <asp:TextBox runat="server" id="codigoformulario" CssClass="form-control" required />
+                                        <asp:TextBox runat="server" id="codigoformulario" CssClass="form-control" Enabled="false" />
                                     </div>
                                 </div>
                                 <div class="col-md-4">
@@ -63,7 +63,7 @@
                                 <div class="col-md-12">
                                     <div class="form-group">
                                         <label>DESCRIPCION</label>
-                                        <textarea runat="server" id="descripcionformulario" class="form-control" rows="4 " required ></textarea>
+                                        <textarea runat="server" id="descripcionformulario" class="form-control" rows="4 "  ></textarea>
                                     </div>
                                 </div>
                             </div>
@@ -76,10 +76,6 @@
                 </div>
             </div>
         </div>
-
-
-
-
         <%--MODAL CLIENTES--%>
         <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">

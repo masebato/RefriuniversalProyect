@@ -10,33 +10,42 @@
 namespace RefriuniversalProyect.views {
     
     
-    public partial class Historial {
+    public partial class ConsultarDetalleOrden {
         
         /// <summary>
-        /// Control fechainicio.
+        /// Control CodigOrden.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fechainicio;
+        protected global::System.Web.UI.WebControls.TextBox CodigOrden;
         
         /// <summary>
-        /// Control fechamax.
+        /// Control NombreCliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl fechamax;
+        protected global::System.Web.UI.WebControls.TextBox NombreCliente;
         
         /// <summary>
-        /// Control ListaORDENES.
+        /// Control FechaCreacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView ListaORDENES;
+        protected global::System.Web.UI.WebControls.TextBox FechaCreacion;
+        
+        /// <summary>
+        /// Control EstadoOrden.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox EstadoOrden;
     }
 }
