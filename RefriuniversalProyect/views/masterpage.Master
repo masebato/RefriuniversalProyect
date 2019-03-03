@@ -45,10 +45,10 @@
                 <div class="logo">
                     <a href="#" class="simple-text logo-mini">
                         <div class="logo-image-small">
-                            <img src="assets/img/logoru.png">
+                            <img runat="server" id="logoempresa">
                         </div>
                     </a>
-                    <a href="Inicio.aspx" class="simple-text logo-normal" >REFRIUNIVERSAL
+                    <a href="Inicio.aspx" class="simple-text logo-normal" runat="server" id="nombremepresa">
                     </a>
                     <asp:Label Text="" ID="nombreSesion" runat="server" />
                 </div>

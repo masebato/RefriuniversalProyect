@@ -14,10 +14,13 @@ namespace RefriuniversalProyect.views
     {
         private DataTable menu = new DataTable();
         private Models.Login login = new Models.Login();
+        private Empresa obj_empresa;
+        DataTable empresa_table = new DataTable();
         protected void Page_Load(object sender, EventArgs e)
         {
             try
             {
+                CargarDatosEmpresa();
                 CreateMenu();
                 nombreSesion.Text = Session["Nombre"].ToString();
             }
@@ -27,6 +30,14 @@ namespace RefriuniversalProyect.views
 
             }
         }
+        private void CargarDatosEmpresa()
+        {
+            obj_empresa = new Empresa();
+            empresa_table = obj_empresa.ConsultarEmpresa();
+            nombremepresa.InnerText = empresa_table.Rows[0]["nombreEMPRESA"].ToString();
+            logoempresa.Src = empresa_table.Rows[0]["logoEMPRESA"].ToString();
+        }
+
         private void CreateMenu()
         {
             menu = login.ConsultarMenu(Session["Rol"].ToString());

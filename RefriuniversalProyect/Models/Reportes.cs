@@ -43,5 +43,10 @@ namespace RefriuniversalProyect.Models
             return con.OperarDatos("insert into reporte (codiREPORTE, descREPORTE, fechaREPORTE, ORDENSERVICIO_idORDENSERVICIO, ARTICULO_idARTICULO) values ('"+repor.codiREPORTE+"','"+repor.descREPORTE+"','"+repor.fechaREPORTE+"','"+repor.ordenREPORTE+"',(select MAX(idARTICULO) from articulo))");
         }
 
+        public DataTable ReporteMaxid()
+        {
+            return con.ConsultarDatos("select max(idREPORTE)+1 AS reporte  from reporte");
+        }
+
     }
 }

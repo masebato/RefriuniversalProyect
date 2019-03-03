@@ -11,6 +11,21 @@ namespace RefriuniversalProyect.views
     {
         protected void Page_Load(object sender, EventArgs e)
         {
+            if (!IsPostBack)
+            {
+                string idOrden = Convert.ToString(Request.QueryString["idorden"]);
+                CodigOrden.Text= Convert.ToString(Request.QueryString["codigorden"]);
+                NombreCliente.Text = Convert.ToString(Request.QueryString["nombrecliente"]);
+                FechaCreacion.Text = Convert.ToString(Request.QueryString["fechaorden"]);
+                EstadoOrden.Text = Convert.ToString(Request.QueryString["estado"]);
+                consultarReportes(idOrden);
+            }
+
+        }
+
+
+        public void consultarReportes(string orden)
+        {
 
         }
     }

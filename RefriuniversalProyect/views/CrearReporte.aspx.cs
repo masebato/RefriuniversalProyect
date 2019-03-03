@@ -23,8 +23,17 @@ namespace RefriuniversalProyect.views
 
             try
             {
-                reportes.DataSource = orden.ConsultarOrden(codigoOrden.Text);
-                reportes.DataBind();
+                if (codigoOrden.Text=="")
+                {
+                    reportes.DataSource = orden.ConsultarOrden();
+                    reportes.DataBind();
+                }
+                else
+                {
+                    reportes.DataSource = orden.ConsultarOrden(codigoOrden.Text);
+                    reportes.DataBind();
+                }
+                
 
             }
             catch (Exception)
@@ -42,10 +51,12 @@ namespace RefriuniversalProyect.views
                 reportes.EditIndex = e.NewEditIndex;
                 Label idordenservicio = (Label)reportes.Items[e.NewEditIndex].FindControl("idorden");
                 Label codigoorden = (Label)reportes.Items[e.NewEditIndex].FindControl("codigoorden");
+                Label nombrecliente = (Label)reportes.Items[e.NewEditIndex].FindControl("nombrecliente");
+                Label fecha = (Label)reportes.Items[e.NewEditIndex].FindControl("fechaorden");
+                Label estado = (Label)reportes.Items[e.NewEditIndex].FindControl("estadoorden");
 
-                CodigoOrdenmodal.Text = codigoorden.Text;
-                idordenmodal.Text = idordenservicio.Text;
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " $('#CrearReporte').modal('show');", true);
+                Response.Redirect("DetalleCrearReporte.aspx?idorden=" + idordenservicio.Text+"&codigorden="+codigoorden.Text+"&nombrecliente="+nombrecliente.Text+"&fechaorden="+fecha.Text+"&estado="+estado.Text);
+               
             }
             catch (Exception)
             {

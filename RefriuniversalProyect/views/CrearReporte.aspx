@@ -8,14 +8,14 @@
                 <div class="col-lg-12 col-md-10">
                     <div class="card card-user">
                         <div class="card-header">
-                            <h5>CREAR REPORTE</h5>
+                            <h6>CONSULTAR ORDEN</h6>
                         </div>
                         <br />
                         <div class="card-body">
                             <div class="row">
                                 <div class="col-md-6 offset-md-3">
                                     <div class="text-center">                                        
-                                        <asp:TextBox runat="server" CssClass="form-control" ID="codigoOrden"  placeholder="Ingrese codigo orden servicio" required/>
+                                        <asp:TextBox runat="server" CssClass="form-control" ID="codigoOrden"  placeholder="Ingrese codigo orden servicio" />
                                           <asp:Button Text="buscar" CssClass="btn btn-default" runat="server" OnClick="ConsultarOrden"/>
                                     </div>
                                 </div>
@@ -60,18 +60,15 @@
                                                 <asp:Label id="nombretecnico" Text='<%#Eval("nombretecnico")%>' runat="server" />
                                             </td>
                                             <td>
-                                                 <asp:LinkButton class="icono-plusCircle" style="color:cornflowerblue" runat="server" CommandName="edit" />
-                                               
+                                                 <asp:LinkButton class="icono-eye" style="color:cornflowerblue" runat="server" CommandName="edit" />                                               
                                             </td>
                                         </tr>
                                     </ItemTemplate>
                                 </asp:ListView>
-                            </tbody>
-                          
+                            </tbody>                          
                         </table>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -90,7 +87,7 @@
                             <div class="col-md-4">
                                 <div class="form-group">
                                     <label> Codigo reporte </label>
-                                    <asp:TextBox runat="server" id="codigoreporte" CssClass="form-control"/>
+                                    <asp:TextBox runat="server" id="codigoreporte" CssClass="form-control" Enabled="false"/>
                                 </div>
                             </div>
                             <div class="col-md-4">

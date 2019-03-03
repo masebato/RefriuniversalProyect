@@ -103,10 +103,12 @@
     <Content Include="views\assets\js\plugins\bootstrap-notify.js" />
     <Content Include="views\assets\js\plugins\chartjs.min.js" />
     <Content Include="views\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
+    <Content Include="views\Configuraciones.aspx" />
     <Content Include="views\ConsultarDetalleOrden.aspx" />
     <Content Include="views\CrearCliente.aspx" />
     <Content Include="views\CrearReporte.aspx" />
     <Content Include="views\CrearTecnico.aspx" />
+    <Content Include="views\DetalleCrearReporte.aspx" />
     <Content Include="views\Historial.aspx" />
     <Content Include="views\Inicio.aspx" />
     <Content Include="views\login.aspx" />
@@ -123,15 +125,25 @@
     <Compile Include="AccesoDatos\Interface\IDatos.cs" />
     <Compile Include="Models\Articulo.cs" />
     <Compile Include="Models\Clientes.cs" />
+    <Compile Include="Models\Empresa.cs" />
     <Compile Include="Models\Login.cs" />
     <Compile Include="Models\Menu.cs" />
     <Compile Include="Models\OrdenServicio.cs" />
     <Compile Include="Models\Permisos.cs" />
+    <Compile Include="Models\Producto.cs" />
     <Compile Include="Models\Reportes.cs" />
     <Compile Include="Models\Rol.cs" />
     <Compile Include="Models\Tecnico.cs" />
     <Compile Include="Models\TipoDocumento.cs" />
+    <Compile Include="Models\tipoArticulo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="views\Configuraciones.aspx.cs">
+      <DependentUpon>Configuraciones.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\Configuraciones.aspx.designer.cs">
+      <DependentUpon>Configuraciones.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\ConsultarDetalleOrden.aspx.cs">
       <DependentUpon>ConsultarDetalleOrden.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -159,6 +171,13 @@
     </Compile>
     <Compile Include="views\CrearTecnico.aspx.designer.cs">
       <DependentUpon>CrearTecnico.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\DetalleCrearReporte.aspx.cs">
+      <DependentUpon>DetalleCrearReporte.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\DetalleCrearReporte.aspx.designer.cs">
+      <DependentUpon>DetalleCrearReporte.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\Historial.aspx.cs">
       <DependentUpon>Historial.aspx</DependentUpon>

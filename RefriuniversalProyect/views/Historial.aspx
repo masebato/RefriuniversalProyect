@@ -35,12 +35,13 @@
                 </div>
             </div>
             <div class="row">               
-                        <asp:ListView runat="server" ID="ListaORDENES" DataKeyNames="idORDENSERVICIO">
+                        <asp:ListView runat="server" ID="ListaORDENES" DataKeyNames="idORDENSERVICIO" OnItemEditing="ListaORDENES_ItemEditing">
                             <ItemTemplate>
                                 <div class="col">
                                     <div class="card card-user">
                                         <div class="card-header">
-                                            <h5 runat="server" id="codigoORDEN" class="alert-success text-center"> <%#Eval("codiORDENSERVICIO") %></h5>
+                                            <asp:Label Text='<%#Eval("codiORDENSERVICIO") %>' ID="codigoORDEN" CssClass="h6 alert-info text-center" runat="server" />
+                                          
                                         </div>
                                         <div class="card-body">
                                             <div class="row">
@@ -71,7 +72,7 @@
                                             </div>
                                         </div>
                                         <div class="card-footer">
-                                            <asp:LinkButton Text="" CssClass="icono-eye" CommandArgument="edit" runat="server" />
+                                            <asp:LinkButton Text="" CssClass="icono-eye" CommandName="edit" runat="server" />
                                         </div>
                                     </div>
                                 </div>

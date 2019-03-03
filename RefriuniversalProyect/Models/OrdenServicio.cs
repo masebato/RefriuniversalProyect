@@ -56,6 +56,12 @@ namespace RefriuniversalProyect.Models
             return con.ConsultarDatos("SELECT idORDENSERVICIO, descORDENSERVICIO, codiORDENSERVICIO, fechaORDENSERVICIO, estadoORDENSERVICIO, CONCAT(nombCLIENTE,' ',apellCLIENTE) AS nombrecliente, CONCAT(nombTECNICO, ' ', apelTECNICO) AS nombretecnico   FROM ordenservicio INNER JOIN cliente ON ordenservicio.CLIENTE_idCLIENTE = cliente.idCLIENTE INNER JOIN tecnico ON ordenservicio.TECNICO_idTECNICO = tecnico.idTECNICO WHERE ordenservicio.codiORDENSERVICIO='" + codigo+"'");
         }
 
+        public DataTable ConsultarOrden()
+        {
+            return con.ConsultarDatos("SELECT idORDENSERVICIO, descORDENSERVICIO, codiORDENSERVICIO, fechaORDENSERVICIO, estadoORDENSERVICIO, CONCAT(nombCLIENTE,' ',apellCLIENTE) AS nombrecliente, CONCAT(nombTECNICO, ' ', apelTECNICO) AS nombretecnico   FROM ordenservicio INNER JOIN cliente ON ordenservicio.CLIENTE_idCLIENTE = cliente.idCLIENTE INNER JOIN tecnico ON ordenservicio.TECNICO_idTECNICO = tecnico.idTECNICO where estadoORDENSERVICIO='ACTIVO' ");
+
+        }
+
         public DataTable OrdenPorFecha(string fechaini, string fechafin)
         {
             return con.ConsultarDatos("SELECT idORDENSERVICIO, codiORDENSERVICIO, fechaORDENSERVICIO, CONCAT(nombCLIENTE,' ',apellCLIENTE) AS nombres, estadoORDENSERVICIO FROM ordenservicio INNER JOIN CLIENTE ON ordenservicio.CLIENTE_idCLIENTE= cliente.idCLIENTE WHERE ordenservicio.fechaORDENSERVICIO BETWEEN '" + fechaini + "' AND '" + fechafin + "'");
