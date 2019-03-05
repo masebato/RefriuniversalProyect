@@ -22,7 +22,7 @@
                             </div>
                             <br />
                             <div class="row">
-                           <table id="example" class="table table-bordered" style="width: 100%">
+                           <table id="example" class="table table-responsive-lg" style="width: 100%">
                             <thead>
                                 <tr>
                                     <th>ID</th>
@@ -73,86 +73,6 @@
                 </div>
             </div>
           </div>
-         <div class="modal fade" id="CrearReporte" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog modal-lg" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Crear Reporte</h5>
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                            <span aria-hidden="true">&times;</span>
-                        </button>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label> Codigo reporte </label>
-                                    <asp:TextBox runat="server" id="codigoreporte" CssClass="form-control" Enabled="false"/>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="form-group">
-                                    <label>Fecha</label>
-                                    <asp:TextBox runat="server" type="date" ID="fechaReporte" CssClass="form-control"/>
-                                </div>
-                            </div>
-                            <div class="col-md.4">
-                                 <div class="form-group">
-                                    <label>Codigo Orden</label>
-                                    <asp:TextBox runat="server"  ID="CodigoOrdenmodal" CssClass="form-control" Enabled="false"/>
-                                       <asp:TextBox runat="server"  ID="idordenmodal" CssClass="form-control" Enabled="false" Visible="false"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Nombre Articulo</label>
-                                    <asp:TextBox runat="server" ID="nombreArticulo" CssClass="form-control"/>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Referencia Articulo</label>
-                                    <asp:TextBox runat="server" id="ReferenciaArticulo" CssClass="form-control"/>
-                                </div>
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>tipo Articulo</label>
-                                     <asp:DropDownList runat="server" id="tipoarticulo" CssClass="form-control">
-                                    <asp:ListItem Text="Seleccione" Selected="True" />
-                                    <asp:ListItem Text="Nevera" />
-                                    <asp:ListItem Text="Lavadora" />
-                                    <asp:ListItem Text="A/C" />
-                                    <asp:ListItem Text="Cuarto frio" />
-                                    <asp:ListItem Text="Tanque enfriamiento" />
-                                </asp:DropDownList>
-                                </div>                                
-                            </div>
-                            <div class="col-md-3">
-                                <div class="form-group">
-                                    <label>Marca Articulo</label>
-                                    <asp:TextBox runat="server" id="marcaArticulo" CssClass="form-control"/>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                   <div class="form-group">
-                                <label>Descripcion</label>
-                                <textarea runat="server" id="descripcionReporte" class="form-control" rows="6" CssClass="form-control"></textarea>
-                            </div>
-                            </div>
-                         
-                        </div>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                        <asp:Button Text="Guardar"  CssClass="btn btn-success" runat="server" OnClick="GuardarReporte" />
-                    </div>
-                </div>
-            </div>
-        </div>          
+       
     </div>    
 </asp:Content>

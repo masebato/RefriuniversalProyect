@@ -5,7 +5,7 @@
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
         <div class="row">
-            <div class="col-md-6">
+            <div class="card-columns">
                 <div class="card card-user">
                     <div class="card-header">
                         <h6>Datos de la empresa</h6>
@@ -39,13 +39,12 @@
                         </div>
                         <div class="row">
                             <div class="col-2">
-                                <asp:Button ID="UploadButton" Text="ACTUALIZAR" runat="server" CssClass="btn btn-info" OnClick="UploadButton_Click" />
+                                <asp:LinkButton ID="UploadButton" Text="ACTUALIZAR" runat="server" CssClass="btn btn-info" OnClick="UploadButton_Click" />
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-md-6">
+          
                 <asp:ScriptManager ID="ScriptManager1"  runat="server" />
                 <asp:UpdatePanel runat="server">
                   <Triggers>
@@ -67,7 +66,7 @@
                                 </div>
                             </div>
                             <div class="card-body">
-                                <table class="table table-responsive-md">
+                                <table class="table table-responsive-lg">
                                     <thead>
                                         <tr>
                                             <th>NOMBRE</th>
@@ -97,8 +96,56 @@
                         </div>
                     </ContentTemplate>
                 </asp:UpdatePanel>
+        
+       
+                <div class="card card-user">
+                    <div class="card-header">
+                        <h6>TIPO DOCUMENTO</h6>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Nombre Tipo Documento</label>
+                                    <asp:TextBox runat="server" id="TipoDocumentoNombre" CssClass="form-control" />
+                                    <asp:LinkButton Text="CREAR" id="creartipoDocumento" CssClass="btn btn-success" runat="server" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <table class="table table-responsive-lg">
+                                <thead>
+                                    <tr>
+                                        <th>NOMBRE</th>
+                                        <th>ESTADO</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <asp:ListView runat="server" ID="cargartipoDocumento" OnItemEditing="cargartipoDocumento_ItemEditing">
+                                        <ItemTemplate>
+                                            <tr>
+                                                <td>
+                                                     <asp:Label Text='<%#Eval("nombreTIPODOCUMENTO")%>' ID="nombre" runat="server" />
+                                                     <asp:Label Text='<%#Eval("idTIPODOCUMENTO")%>' ID="id" runat="server" Visible="false" />
+                                                    
+                                                </td>
+                                                <td>
+                                                     <asp:Label Text='<%#Eval("estadoTIPODOCUMENTO")%>' ID="estado" runat="server"  />
+                                                </td>
+                                                <td>
+                                                    <asp:LinkButton  runat="server" CssClass="icono-gear" CommandName="edit" />
+                                                </td>
+                                            </tr>
+                                        </ItemTemplate>
+                                    </asp:ListView>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+            </div>
+     
           <div class="modal fade" id="tipo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe2" aria-hidden="true">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
@@ -134,6 +181,47 @@
                     </div>
                 </div>
             </div>
-        </div>
+       
     </div>
+
+           <div class="modal fade" id="TipoDocumento" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe3" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabe3">Modificar Tipo Articulo</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>NOMBRE</label>
+                                    <asp:TextBox runat="server" ID="NombreTipoDocu" CssClass="form-control" required />
+                                    <asp:Label Text="" ID="idTipoDocu" Visible="false" runat="server" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>ESTADO</label>
+                                    <asp:DropDownList runat="server" ID="estadotipoDocu" CssClass="form-control">
+                                        <asp:ListItem Text="ACTIVO" Selected="True"/>
+                                        <asp:ListItem Text="INACTIVO" />
+                                    </asp:DropDownList>
+                                </div>
+                            </div>                            
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button Text="ACTUALIZAR" runat="server" CssClass="btn btn-success" OnClick="ActualizarTipoDocu" />
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">CERRAR</button>
+                    </div>
+                </div>
+            </div>
+       
+    </div>
+
+
+           </div>
 </asp:Content>

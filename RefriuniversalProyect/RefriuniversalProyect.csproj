@@ -73,6 +73,7 @@
     <Content Include="views\assets\css\paper-dashboard.min.css" />
     <Content Include="views\assets\demo\demo.css" />
     <Content Include="views\assets\demo\demo.js" />
+    <Content Include="views\assets\img\fondo_login.jpg" />
     <Content Include="views\assets\img\logoru.png" />
     <Content Include="views\assets\img\apple-icon.png" />
     <Content Include="views\assets\img\bg5.jpg" />

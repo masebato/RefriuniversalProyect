@@ -12,10 +12,10 @@ namespace RefriuniversalProyect.Models
     {
         IDatos con = new Datos();
         string idARTICULO { get; set; }
-        string nombARTICULO { get; set; }
+        
         string refeARTICULO { get; set; }
         string tipoARTICULO { get; set; }
-        string marcaARTICULO { get; set; }
+        
 
 
 
@@ -24,17 +24,17 @@ namespace RefriuniversalProyect.Models
 
         }
 
-        public Articulo(string nombARTICULO, string refeARTICULO, string tipoARTICULO, string marcaARTICULO )
+        public Articulo( string refeARTICULO, string tipoARTICULO )
         {
-            this.nombARTICULO = nombARTICULO;
+           
             this.refeARTICULO = refeARTICULO;
             this.tipoARTICULO = tipoARTICULO;
-            this.marcaARTICULO = marcaARTICULO;
+           
         }
 
         public bool insertarArticulo(Articulo arti)
         {
-            return con.OperarDatos("insert into articulo (nombARTICULO, refeARTICULO, tipoARTICULO, marcaARTICULO) values ('"+arti.nombARTICULO+"','"+arti.refeARTICULO+"','"+arti.tipoARTICULO+"','"+arti.marcaARTICULO+"')");
+            return con.OperarDatos("insert into articulo ( refeARTICULO, TIPO_ARTICULO_idTIPO_ARTICULO) values ('" + arti.refeARTICULO+"','"+arti.tipoARTICULO+"')");
         }
 
 

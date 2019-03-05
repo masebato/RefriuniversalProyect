@@ -14,6 +14,7 @@ namespace RefriuniversalProyect.views
         Empresa obj_empr;
         DataTable empresa_data = new DataTable();
         tipoArticulo obj_tipoArticulo;
+        TipoDocumento obj_tipoDocumento;
         protected void Page_Load(object sender, EventArgs e)
         {
             if (!IsPostBack)
@@ -23,6 +24,7 @@ namespace RefriuniversalProyect.views
                 nombreEmpresa.Text = empresa_data.Rows[0]["nombreEMPRESA"].ToString();
                 Nit.Text = empresa_data.Rows[0]["nitEMPRESA"].ToString();
                 CargartipoArticulo();
+                CargarTipoDocumento();
             }
 
         }
@@ -43,6 +45,21 @@ namespace RefriuniversalProyect.views
             catch (Exception)
             {
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " Swal.fire(  'EL REGISTRO NO FUE ALMACENADO',  '', 'error')", true);                
+            }
+        }
+
+        protected void CargarTipoDocumento()
+        {
+            try
+            {
+                obj_tipoDocumento = new TipoDocumento();
+                cargartipoDocumento.DataSource= obj_tipoDocumento.consultartipoDdocu();
+                cargartipoDocumento.DataBind();
+            }
+            catch (Exception)
+            {
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " Swal.fire(  'ERROR  DE CONEXION',  '', 'error')", true);
+
             }
         }
 
@@ -75,7 +92,7 @@ namespace RefriuniversalProyect.views
             }
             catch (Exception)
             {
-                  ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " Swal.fire(  'ERROR DE CONEXION',  '', 'error')", true);
+                  ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " Swal.fire(  'ERROR  DE CONEXION',  '', 'error')", true);
             }
         }
 
@@ -117,6 +134,48 @@ namespace RefriuniversalProyect.views
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " Swal.fire(  'ERROR DE CONEXION',  '', 'error')", true);
             }
 
+
+        }
+
+        protected void cargartipoDocumento_ItemEditing(object sender, ListViewEditEventArgs e)
+        {
+            try
+            {
+                cargartipoDocumento.EditIndex = e.NewEditIndex;
+                Label id = (Label)cargartipoDocumento.Items[e.NewEditIndex].FindControl("id");
+                idTipoDocu.Text = id.Text;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " $('#tipo').modal('show');", true);
+            }
+            catch (Exception)
+            {
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " Swal.fire(  'ERROR DE CONEXION',  '', 'error')", true);
+            }
+        }
+
+        protected void ActualizarTipoDocu(object sender, EventArgs e)
+        {
+            try
+            {
+                obj_tipoDocumento = new TipoDocumento();
+                if (obj_tipoDocumento.ActualizarTipodocu(NombreTipoDocu.Text, idTipoDocu.Text, estadoTipoArti.SelectedItem.Text))
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " Swal.fire(  'REGISTRO ALMACENADO',  '', 'success')", true);
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " Swal.fire(  'EL REGISTRO NO FUE ALMACENADO',  '', 'error')", true);
+                }
+            }
+            catch (Exception)
+            {
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " Swal.fire(  'ERROR DE CONEXION',  '', 'error')", true);
+            }
+        }
+
+        protected void CrearTipoDocumento(object sender, EventArgs e)
+        {
 
         }
     }

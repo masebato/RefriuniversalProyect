@@ -46,7 +46,7 @@ namespace RefriuniversalProyect.views {
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button UploadButton;
+        protected global::System.Web.UI.WebControls.LinkButton UploadButton;
         
         /// <summary>
         /// Control ScriptManager1.
@@ -85,6 +85,33 @@ namespace RefriuniversalProyect.views {
         protected global::System.Web.UI.WebControls.ListView ListaTipoArticulo;
         
         /// <summary>
+        /// Control TipoDocumentoNombre.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox TipoDocumentoNombre;
+        
+        /// <summary>
+        /// Control creartipoDocumento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton creartipoDocumento;
+        
+        /// <summary>
+        /// Control cargartipoDocumento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.ListView cargartipoDocumento;
+        
+        /// <summary>
         /// Control nombreArticulo.
         /// </summary>
         /// <remarks>
@@ -110,5 +137,32 @@ namespace RefriuniversalProyect.views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.DropDownList estadoTipoArti;
+        
+        /// <summary>
+        /// Control NombreTipoDocu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox NombreTipoDocu;
+        
+        /// <summary>
+        /// Control idTipoDocu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label idTipoDocu;
+        
+        /// <summary>
+        /// Control estadotipoDocu.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList estadotipoDocu;
     }
 }

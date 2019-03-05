@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/views/masterpage.Master" AutoEventWireup="true" CodeBehind="DetalleCrearReporte.aspx.cs" Inherits="RefriuniversalProyect.views.DetalleCrearReporte" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
@@ -44,6 +43,40 @@
             <div class="col-md-6">
                 <div class="card card-user">
                     <div class="card-header">
+                        <h6>Informacion Articulo</h6>
+                    </div>
+                    <div class="card-body">
+
+
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>TIPO ARTICULO</label>
+                                    <asp:DropDownList runat="server" ID="tipoArticulo" CssClass="form-control" AppendDataBoundItems="true">
+                                        <asp:ListItem Text="Seleccione" Value="0" Selected="True" />
+                                    </asp:DropDownList>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>REFERENCIA ARTICULO</label>
+                                    <asp:TextBox runat="server" CssClass="form-control" ID="referencia" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class=".col-md-4">
+                                <asp:LinkButton Text="Guardar" CssClass="btn btn-dark" runat="server" ID="save" OnClick="GuardarArticulo" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card card-user">
+                    <div class="card-header">
                         <h6>Reporte</h6>
                     </div>
                     <div class="card-body">
@@ -69,31 +102,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6">
-                <div class="card card-user">
-                    <div class="card-header">
-                        <h6>Informacion Articulo</h6>
-                    </div>
-                    <div class="card-body">
                         <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label>TIPO ARTICULO</label>
-                                    <asp:DropDownList runat="server" ID="tipoArticulo" CssClass="form-control" AppendDataBoundItems="true">
-                                        <asp:ListItem Text="Seleccione" Value="0" Selected="True" />
-                                    </asp:DropDownList>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <div class="form-group">
-                                    <label>REFERENCIA ARTICULO</label>
-                                    <asp:TextBox runat="server" CssClass="form-control" ID="referencia" />
-                                </div>
+                            <div class=".col-md-4">
+                                <asp:LinkButton Text="Guardar" CssClass="btn btn-dark" runat="server" ID="LinkButton1" OnClick="CrearReporte" />
                             </div>
                         </div>
                     </div>
@@ -102,24 +113,24 @@
         </div>
         <div class="row">
             <div class="col-md-6">
-                <asp:ScriptManager ID="ScriptManager1"  runat="server" />
+                <asp:ScriptManager ID="ScriptManager1" runat="server" />
                 <asp:UpdatePanel runat="server" UpdateMode="Conditional">
                     <Triggers>
                         <asp:AsyncPostBackTrigger ControlID="busquedalink" />
                     </Triggers>
                     <ContentTemplate>
-                <div class="card card-user">
-                    <div class="card-header">
-                        <h6>Agregar Repuesto</h6>
-                    </div>                                      
+                        <div class="card card-user">
+                            <div class="card-header">
+                                <h6>Agregar Repuesto</h6>
+                            </div>
                             <div class="card-body">
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-group">
                                             <label>Busqueda</label>
                                             <asp:TextBox runat="server" CssClass="form-control" ID="busqueda" />
-                                            <asp:LinkButton Text="BUSCAR" OnClick="Busqueda" runat="server"  id="busquedalink" CssClass="btn btn-info"/>
-                                            <asp:LinkButton Text="CREAR" runat="server" OnClick="abrirmodal" CssClass="btn btn-default" />                                         
+                                            <asp:LinkButton Text="BUSCAR" OnClick="Busqueda" runat="server" ID="busquedalink" CssClass="btn btn-info" />
+                                            <asp:LinkButton Text="CREAR" runat="server" OnClick="abrirmodal" CssClass="btn btn-default" />
                                         </div>
                                     </div>
                                 </div>
@@ -151,9 +162,9 @@
                                     </div>
                                 </div>
                             </div>
-                      
-                </div>
-                        </ContentTemplate>
+
+                        </div>
+                    </ContentTemplate>
                 </asp:UpdatePanel>
             </div>
             <div class="col-md-6">
@@ -184,7 +195,7 @@
                                     </tbody>
 
                                 </table>
-                               
+
                             </div>
                         </div>
                     </div>
@@ -223,12 +234,38 @@
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <asp:Button Text="CREAR" runat="server" CssClass="btn btn-success" OnClick="CrearRepuesto" />
+                        <asp:LinkButton Text="CREAR" runat="server" CssClass="btn btn-success" OnClick="CrearRepuesto" />
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">CERRAR</button>
                     </div>
                 </div>
             </div>
         </div>
-   </div>
-    
+        <div class="modal fade" id="cantidadProducto" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabe3" aria-hidden="true">
+            <div class="modal-dialog modal-lg" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabe3">Insertar Repuesto</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Cantidad</label>
+                                    <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" required />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <asp:Button Text="CREAR" runat="server" CssClass="btn btn-success" OnClick="InsertarRepuesto" />
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">CERRAR</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </asp:Content>

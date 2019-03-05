@@ -78,7 +78,18 @@ namespace RefriuniversalProyect.views
             return tag_p;
         }
 
+        protected void CERRAR_ServerClick(object sender, EventArgs e)
+        {
+            try
+            {
+                Session.Abandon();
+                Response.Redirect("login.aspx");
+            }
+            catch (Exception)
+            {
 
-
+                throw;
+            }
+        }
     }
 }

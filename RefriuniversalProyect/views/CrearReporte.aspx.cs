@@ -66,59 +66,6 @@ namespace RefriuniversalProyect.views
      
         }
 
-        protected void GuardarReporte(object sender, EventArgs e)
-        {
-            try
-            {
-                arti = new Articulo(
-               nombreArticulo.Text,
-               ReferenciaArticulo.Text,
-               tipoarticulo.SelectedValue,
-               marcaArticulo.Text
-
-               );
-
-                if (arti.insertarArticulo(arti))
-                {
-                    repor = new Reportes(
-
-                 codigoreporte.Text,
-                 descripcionReporte.InnerHtml,
-                 fechaReporte.Text,
-                 idordenmodal.Text
-                 );
-                    if (repor.insertarReporte(repor))
-                    {
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('REGISTRO ALMACENADO', '', 'success');", true);
-                        codigoreporte.Text = "";
-                        descripcionReporte.InnerHtml = "";
-                        fechaReporte.Text = "";
-                        idordenmodal.Text = "";
-                        nombreArticulo.Text = "";
-                        ReferenciaArticulo.Text = "";
-                        tipoarticulo.SelectedValue = "";
-                        marcaArticulo.Text = "";
-                    }
-                    else
-                    {
-                        ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('REGISTRO NO ALMACENADO', '', 'error');", true);
-                    }
-
-                }
-                else
-                {
-                    ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('REGISTRO NO ALMACENADO', '', 'error');", true);
-                }
-
-            }
-            catch (Exception )
-            {
-
-                ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('ERROR DE CONEXION', '', 'error');", true);
-            }
-           
-
-         
-        }
+      
     }
 }

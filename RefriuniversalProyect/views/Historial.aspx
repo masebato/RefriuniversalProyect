@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="row">               
+            <div class="card-columns">               
                         <asp:ListView runat="server" ID="ListaORDENES" DataKeyNames="idORDENSERVICIO" OnItemEditing="ListaORDENES_ItemEditing">
                             <ItemTemplate>
                                 <div class="col">

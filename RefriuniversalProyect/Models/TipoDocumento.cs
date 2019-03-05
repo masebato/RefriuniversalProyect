@@ -28,10 +28,18 @@ namespace RefriuniversalProyect.Models
 
         public DataTable consultartipoDdocu()
         {
-            return con.ConsultarDatos("SELECT tipodocumento.idTIPODOCUMENTO, tipodocumento.nombreTIPODOCUMENTO from tipodocumento"); 
+            return con.ConsultarDatos("SELECT idTIPODOCUMENTO, nombreTIPODOCUMENTO, estadoTIPODOCUMENTO from tipodocumento"); 
         }
 
+        public bool InsertartipoDocu(string nombre)
+        {
+            return con.OperarDatos("insert into tipodocumento (nombreTIPODOCUMENTO, estadoTIPODOCUMENTO) values ('" + nombre + "','ACTIVO')");
+        }
 
-        
+        public bool ActualizarTipodocu(string nombre, string id, string estado)
+        {
+            return con.OperarDatos("update tipodocumento set nombreTIPODOCUMENTO='"+nombre+"', estadoTIPODOCUMENTO='"+estado+"' where idTIPODOCUMENTO = '"+id+"'");
+        }
+
     }
 }
