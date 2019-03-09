@@ -48,7 +48,7 @@ namespace RefriuniversalProyect.views
             }
         }
 
-        protected void CargarTipoDocumento()
+        public void CargarTipoDocumento()
         {
             try
             {
@@ -176,7 +176,27 @@ namespace RefriuniversalProyect.views
 
         protected void CrearTipoDocumento(object sender, EventArgs e)
         {
+            try
+            {
+                obj_tipoDocumento = new TipoDocumento();
 
+                if (obj_tipoDocumento.InsertartipoDocu(TipoDocumentoNombre.Text))
+                {
+                    TipoDocumentoNombre.Text = "";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " Swal.fire(  'REGISTRO ALMACENADO',  '', 'success')", true);
+                    CargarTipoDocumento();
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " Swal.fire(  'EL REGISTRO NO FUE ALMACENADO',  '', 'error')", true);
+                }
+
+            }
+            catch (Exception)
+            {
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " Swal.fire(  'ERROR DE CONEXION',  '', 'error')", true);
+            }
         }
     }
 }

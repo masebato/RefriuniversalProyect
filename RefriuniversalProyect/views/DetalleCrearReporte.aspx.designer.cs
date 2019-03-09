@@ -49,6 +49,15 @@ namespace RefriuniversalProyect.views {
         protected global::System.Web.UI.WebControls.TextBox EstadoOrden;
         
         /// <summary>
+        /// Control ordenCerrar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton ordenCerrar;
+        
+        /// <summary>
         /// Control tipoArticulo.
         /// </summary>
         /// <remarks>
@@ -74,6 +83,15 @@ namespace RefriuniversalProyect.views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton save;
+        
+        /// <summary>
+        /// Control divReporte.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divReporte;
         
         /// <summary>
         /// Control codigo.
@@ -121,6 +139,15 @@ namespace RefriuniversalProyect.views {
         protected global::System.Web.UI.ScriptManager ScriptManager1;
         
         /// <summary>
+        /// Control divRepuestos.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divRepuestos;
+        
+        /// <summary>
         /// Control busqueda.
         /// </summary>
         /// <remarks>
@@ -146,6 +173,15 @@ namespace RefriuniversalProyect.views {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView listarespuestos;
+        
+        /// <summary>
+        /// Control divListaRepuesto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl divListaRepuesto;
         
         /// <summary>
         /// Control repuestosOrden.
@@ -184,12 +220,30 @@ namespace RefriuniversalProyect.views {
         protected global::System.Web.UI.WebControls.TextBox referenciaProducto;
         
         /// <summary>
-        /// Control TextBox1.
+        /// Control cantidad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox TextBox1;
+        protected global::System.Web.UI.WebControls.TextBox cantidad;
+        
+        /// <summary>
+        /// Control id.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label id;
+        
+        /// <summary>
+        /// Control nombreRepuestoModal.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox nombreRepuestoModal;
     }
 }

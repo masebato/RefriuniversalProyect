@@ -10,24 +10,24 @@
 namespace RefriuniversalProyect.views {
     
     
-    public partial class ModificarCliente {
+    public partial class ConsultarArticulo {
         
         /// <summary>
-        /// Control documentoCliente.
+        /// Control referencia.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox documentoCliente;
+        protected global::System.Web.UI.WebControls.TextBox referencia;
         
         /// <summary>
-        /// Control clientesList.
+        /// Control listaArticulo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView clientesList;
+        protected global::System.Web.UI.WebControls.ListView listaArticulo;
     }
 }

@@ -5022,6 +5022,7 @@ License - nucleoapp.com/license/
   float: right;
   width: calc(100% - 260px);
   background-image:url('../img/fondo_login.jpg');
+  background-repeat:no-repeat;  
   -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -moz-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);

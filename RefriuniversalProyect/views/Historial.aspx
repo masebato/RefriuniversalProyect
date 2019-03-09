@@ -11,7 +11,7 @@
                 <div class="card card-user">
                     <div class="card-header">
                         <h5>BUSCAR ORDENES</h5>
-                    
+
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
@@ -20,7 +20,7 @@
                                 </div>
                             </div>
                             <div class="col">
-                                   <div class="form-group">
+                                <div class="form-group">
                                     <label>Fecha max</label>
                                     <input id="fechamax" type="date" runat="server" class="form-control" />
                                 </div>
@@ -34,51 +34,51 @@
                     </div>
                 </div>
             </div>
-            <div class="card-columns">               
-                        <asp:ListView runat="server" ID="ListaORDENES" DataKeyNames="idORDENSERVICIO" OnItemEditing="ListaORDENES_ItemEditing">
-                            <ItemTemplate>
-                                <div class="col">
-                                    <div class="card card-user">
-                                        <div class="card-header">
-                                            <asp:Label Text='<%#Eval("codiORDENSERVICIO") %>' ID="codigoORDEN" CssClass="h6 alert-info text-center" runat="server" />
-                                          
+            <div class="card-columns">
+                <asp:ListView runat="server" ID="ListaORDENES" DataKeyNames="idORDENSERVICIO" OnItemEditing="ListaORDENES_ItemEditing">
+                    <ItemTemplate>
+                        <div class="col">
+                            <div class="card card-user">
+                                <div class="card-header">
+                                    <asp:Label Text='<%#Eval("codiORDENSERVICIO") %>' ID="codigoORDEN" CssClass="h6 alert-info text-center" runat="server" />
+
+                                </div>
+                                <div class="card-body">
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>NOMBRE CLIENTE</label>
+                                                <asp:Label Text='<%#Eval("nombres") %>' ID="NombreCliente" runat="server" />
+                                            </div>
+
+                                            <asp:Label Text='<%#Eval("idORDENSERVICIO") %>' ID="idORden" Visible="false" runat="server" />
                                         </div>
-                                        <div class="card-body">
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label>NOMBRE CLIENTE</label>
-                                                        <asp:Label Text='<%#Eval("nombres") %>' ID="NombreCliente" runat="server" />
-                                                    </div>
-                                                    
-                                                    <asp:Label Text='<%#Eval("idORDENSERVICIO") %>' ID="idORden" Visible="false" runat="server" />
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label>FECHA ORDEN</label>
-                                                         <asp:Label Text='<%#Eval("fechaORDENSERVICIO") %>' ID="Fecha" runat="server" />
-                                                    </div>                                                   
-                                                </div>
-                                            </div>
-                                            <div class="row">
-                                                <div class="col">
-                                                    <div class="form-group">
-                                                        <label>ESTADO ORDEN</label>
-                                                        <asp:Label Text='<%#Eval("estadoORDENSERVICIO") %>' ID="Estado" runat="server" />
-                                                    </div>                                                    
-                                                </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>FECHA ORDEN</label>
+                                                <asp:Label Text='<%#Eval("fechaORDENSERVICIO") %>' ID="Fecha" runat="server" />
                                             </div>
                                         </div>
-                                        <div class="card-footer">
-                                            <asp:LinkButton Text="" CssClass="icono-eye" CommandName="edit" runat="server" />
+                                    </div>
+                                    <div class="row">
+                                        <div class="col">
+                                            <div class="form-group">
+                                                <label>ESTADO ORDEN</label>
+                                                <asp:Label Text='<%#Eval("estadoORDENSERVICIO") %>' ID="Estado" runat="server" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
-                            </ItemTemplate>
-                        </asp:ListView>
-                 
+                                <div class="card-footer">
+                                    <asp:LinkButton Text="" CssClass="icono-eye" CommandName="edit" runat="server" />
+                                </div>
+                            </div>
+                        </div>
+                    </ItemTemplate>
+                </asp:ListView>
+
             </div>
         </div>
     </div>

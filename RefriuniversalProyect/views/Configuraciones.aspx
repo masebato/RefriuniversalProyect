@@ -4,7 +4,7 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
     <div class="content">
-        <div class="row">
+        <div class="">
             <div class="card-columns">
                 <div class="card card-user">
                     <div class="card-header">
@@ -108,7 +108,7 @@
                                 <div class="form-group">
                                     <label>Nombre Tipo Documento</label>
                                     <asp:TextBox runat="server" id="TipoDocumentoNombre" CssClass="form-control" />
-                                    <asp:LinkButton Text="CREAR" id="creartipoDocumento" CssClass="btn btn-success" runat="server" />
+                                    <asp:LinkButton Text="CREAR" id="creartipoDocumento" CssClass="btn btn-success" OnClick="CrearTipoDocumento" runat="server" />
                                 </div>
                             </div>
                         </div>
@@ -143,6 +143,8 @@
                         </div>
                     </div>
                 </div>
+
+              
             </div>
             </div>
      

@@ -32,9 +32,7 @@ namespace RefriuniversalProyect.views
                 {
                     reportes.DataSource = orden.ConsultarOrden(codigoOrden.Text);
                     reportes.DataBind();
-                }
-                
-
+                }                
             }
             catch (Exception)
             {

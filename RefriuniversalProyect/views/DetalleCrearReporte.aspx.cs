@@ -6,6 +6,7 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using RefriuniversalProyect.Models;
 using System.Data;
+using System.Web.UI.HtmlControls;
 
 namespace RefriuniversalProyect.views
 {
@@ -28,6 +29,9 @@ namespace RefriuniversalProyect.views
                 EstadoOrden.Text = Convert.ToString(Request.QueryString["estado"]);
                 generarCodigo(idOrden);
                 CargarTipoArticulo();
+                divReporte.Visible = false;
+                divRepuestos.Visible = false;
+                divListaRepuesto.Visible = false;
             }
           
 
@@ -87,7 +91,10 @@ namespace RefriuniversalProyect.views
             {
                 listarespuestos.EditIndex = e.NewEditIndex;
                 Label idrepuesto = (Label)listarespuestos.Items[e.NewEditIndex].FindControl("id");
-
+                Label nombre = (Label)listarespuestos.Items[e.NewEditIndex].FindControl("nombre");
+                id.Text = idrepuesto.Text;
+                nombreRepuestoModal.Text = nombre.Text;
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " $('#cantidadProducto').modal('show');", true);
 
             }
             catch (Exception)
@@ -128,7 +135,6 @@ namespace RefriuniversalProyect.views
             }
             catch (Exception)
             {
-
                 throw;
             }
         }
@@ -150,7 +156,33 @@ namespace RefriuniversalProyect.views
         {
             try
             {
+                obj_producto = new Producto();
+                if (obj_producto.insertarProductoReporte(id.Text, cantidad.Text))
+                {
+                    cantidad.Text = "";
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " Swal.fire(  'REGISTRO ALMACENADO',  '', 'success')", true);
+                    CargarListaRepuestosReporte();
+                    ordenCerrar.Visible = true;
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "Pop", " Swal.fire(  'EL REGISTRO NO FUE ALMACENADO',  '', 'error')", true);
+                }
+            }
+            catch (Exception)
+            {
 
+                throw;
+            }
+        }
+
+        public void CargarListaRepuestosReporte()
+        {
+            try
+            {
+                obj_producto = new Producto();
+                repuestosOrden.DataSource = obj_producto.ConsultarProductoReporte(codigo.Text);
+                repuestosOrden.DataBind();
             }
             catch (Exception)
             {
@@ -172,7 +204,10 @@ namespace RefriuniversalProyect.views
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('REGISTRO ALMACENADO', '', 'success');", true);
                     referencia.Enabled = false;
                     tipoArticulo.Enabled = false;
-
+                    divReporte.Visible = true;
+                    save.Enabled = false;
+                    
+                        
                 }
                 else
                 {
@@ -204,6 +239,9 @@ namespace RefriuniversalProyect.views
                     ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('REGISTRO ALMACENADO', '', 'success');", true);
                     fecha.Enabled = false;
                     descr.EnableViewState = false;
+                    divListaRepuesto.Visible = true;
+                    divRepuestos.Visible = true;
+                    LinkButton1.Enabled = false;
                 }
                 else
                 {
@@ -216,6 +254,38 @@ namespace RefriuniversalProyect.views
 
                 ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('OCURRIO UNA EXCEPTION', '', 'error');", true);
             }
+        }
+
+
+
+        private HtmlGenericControl assign_tag_card_user(HtmlGenericControl tag_card_user, string value)
+        {
+            tag_card_user.Attributes.Add("style",value);
+            return tag_card_user;
+        }
+
+        protected void CerrarOrden(object sender, EventArgs e)
+        {
+            try
+            {
+                OrdenServicio obj_orden = new OrdenServicio();
+
+                if (obj_orden.ActualizarEstado(idOrden))
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('REGISTRO ALMACENADO', '', 'success');", true);
+                    Response.Redirect("inicio.aspx");
+                }
+                else
+                {
+                    ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('ERROR AL ALMACENAR', '', 'error');", true);
+                }
+            }
+            catch (Exception)
+            {
+
+                ScriptManager.RegisterStartupScript(this, this.GetType(), "hwa", " swal('OCURRIO UNA EXCEPTION', '', 'error');", true);
+            }
+           
         }
     }
 }

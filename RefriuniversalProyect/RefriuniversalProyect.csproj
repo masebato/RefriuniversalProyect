@@ -105,7 +105,9 @@
     <Content Include="views\assets\js\plugins\chartjs.min.js" />
     <Content Include="views\assets\js\plugins\perfect-scrollbar.jquery.min.js" />
     <Content Include="views\Configuraciones.aspx" />
+    <Content Include="views\ConsultarArticulo.aspx" />
     <Content Include="views\ConsultarDetalleOrden.aspx" />
+    <Content Include="views\ConsultarOrdenes.aspx" />
     <Content Include="views\CrearCliente.aspx" />
     <Content Include="views\CrearReporte.aspx" />
     <Content Include="views\CrearTecnico.aspx" />
@@ -145,12 +147,26 @@
     <Compile Include="views\Configuraciones.aspx.designer.cs">
       <DependentUpon>Configuraciones.aspx</DependentUpon>
     </Compile>
+    <Compile Include="views\ConsultarArticulo.aspx.cs">
+      <DependentUpon>ConsultarArticulo.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\ConsultarArticulo.aspx.designer.cs">
+      <DependentUpon>ConsultarArticulo.aspx</DependentUpon>
+    </Compile>
     <Compile Include="views\ConsultarDetalleOrden.aspx.cs">
       <DependentUpon>ConsultarDetalleOrden.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="views\ConsultarDetalleOrden.aspx.designer.cs">
       <DependentUpon>ConsultarDetalleOrden.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="views\ConsultarOrdenes.aspx.cs">
+      <DependentUpon>ConsultarOrdenes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="views\ConsultarOrdenes.aspx.designer.cs">
+      <DependentUpon>ConsultarOrdenes.aspx</DependentUpon>
     </Compile>
     <Compile Include="views\CrearCliente.aspx.cs">
       <DependentUpon>CrearCliente.aspx</DependentUpon>

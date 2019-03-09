@@ -36,6 +36,15 @@ namespace RefriuniversalProyect.Models
             return con.ConsultarDatos("SELECT nombPRODUCTO, refePRODUCTO, marcPRODUCTO FROM reporte INNER JOIN reporte_producto ON reporte_producto.REPORTE_idREPORTE = reporte.idREPORTE INNER JOIN producto ON reporte_producto.PRODUCTO_idPRODUCTO= producto.idPRODUCTO WHERE reporte.codiREPORTE ='" + codReporte + "' ");
         }
         
+        public bool insertarProductoReporte( string reporte, string cantidad)
+        {
+            return con.OperarDatos("insert into reporte_producto (REPORTE_idREPORTE,PRODUCTO_idPRODUCTO, cantidadREPORTE_PRODUCTO) values ((select max(idREPORTE) from reporte),'" + reporte+"','"+cantidad+"')");
+        }
+
+        public DataTable consultarProductosReporte(string idreporte)
+        {
+            return con.ConsultarDatos("SELECT nombPRODUCTO, cantidadREPORTE_PRODUCTO FROM reporte INNER JOIN reporte_producto ON reporte_producto.REPORTE_idREPORTE = reporte.idREPORTE INNER JOIN producto ON reporte_producto.PRODUCTO_idPRODUCTO = producto.idPRODUCTO WHERE idREPORTE = '"+idreporte+"'");
+        }
     }
 
 }

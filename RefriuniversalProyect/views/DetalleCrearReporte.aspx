@@ -33,6 +33,7 @@
                                     <label>ESTADO ORDEN</label>
                                     <asp:TextBox runat="server" ID="EstadoOrden" Enabled="false" CssClass="form-control" />
                                 </div>
+                                <asp:LinkButton Text="GUARDAR REPORTE" id="ordenCerrar" CssClass="btn btn-light" runat="server" Visible="false" OnClick="CerrarOrden"/>
                             </div>
                         </div>
                     </div>
@@ -46,8 +47,6 @@
                         <h6>Informacion Articulo</h6>
                     </div>
                     <div class="card-body">
-
-
                         <div class="row">
                             <div class="col">
                                 <div class="form-group">
@@ -75,7 +74,7 @@
                 </div>
             </div>
             <div class="col-md-6">
-                <div class="card card-user">
+                <div class="card card-user" runat="server" id="divReporte">
                     <div class="card-header">
                         <h6>Reporte</h6>
                     </div>
@@ -119,7 +118,7 @@
                         <asp:AsyncPostBackTrigger ControlID="busquedalink" />
                     </Triggers>
                     <ContentTemplate>
-                        <div class="card card-user">
+                        <div class="card card-user" runat="server" id="divRepuestos" >
                             <div class="card-header">
                                 <h6>Agregar Repuesto</h6>
                             </div>
@@ -168,7 +167,7 @@
                 </asp:UpdatePanel>
             </div>
             <div class="col-md-6">
-                <div class="card card-user">
+                <div class="card card-user" runat="server" id="divListaRepuesto">
                     <div class="card-header">
                         <h6>Lista repuestos</h6>
                     </div>
@@ -184,7 +183,7 @@
                                                 <tr>
                                                     <td>
                                                         <asp:Label Text='<%#Eval("nombPRODUCTO")%>' ID="nombre" runat="server" />
-                                                        <asp:Label Text='<%#Eval("idPRODUCTO")%>' ID="id" runat="server" Visible="false" />
+                                                       
                                                     </td>
                                                     <td>
                                                         <asp:LinkButton CssClass="icono-crossCircle" CommandName="edit" runat="server" />
@@ -254,18 +253,26 @@
                             <div class="col">
                                 <div class="form-group">
                                     <label>Cantidad</label>
-                                    <asp:TextBox runat="server" ID="TextBox1" CssClass="form-control" required />
+                                    <asp:TextBox runat="server" ID="cantidad" CssClass="form-control" required />
+                                    <asp:Label Text="" ID="id" visible="false" runat="server" />
+                                </div>
+                            </div>
+                            <div class="col">
+                                <div class="form-group">
+                                    <label>Repuesto</label>
+                                    <asp:TextBox runat="server" id="nombreRepuestoModal" Enabled="false" CssClass="form-control" />  
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div class="modal-footer">
-                        <asp:Button Text="CREAR" runat="server" CssClass="btn btn-success" OnClick="InsertarRepuesto" />
+                        <asp:LinkButton Text="CREAR" runat="server" CssClass="btn btn-success" OnClick="InsertarRepuesto" />
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">CERRAR</button>
                     </div>
                 </div>
             </div>
         </div>
+
     </div>
 
 </asp:Content>

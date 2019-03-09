@@ -72,5 +72,10 @@ namespace RefriuniversalProyect.Models
             return con.ConsultarDatos("select max(idORDENSERVICIO)+1 AS orden  from ordenservicio");
         }
 
+        public bool ActualizarEstado(string idorden)
+        {
+            return con.OperarDatos("update ordenservicio set estadoORDENSERVICIO='CERRADA' where idORDENSERVICIO = '"+idorden+"'");
+        }
+
     }
 }
